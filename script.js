@@ -17,7 +17,7 @@
 var generateBtn = document.querySelector("#generate"); {
 function generatePassword () {
 
-  var combinedPass = []
+  var userPass = [""]
   var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
   var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
   var numbers = ["0","1","2","3","4","5","6","7","8","9"]
@@ -31,27 +31,33 @@ function generatePassword () {
     
   var passUpper = confirm ("Would you like upper case letters?");
   if (passUpper) {
-    combinedPass+= upperCase
+    (userPass = userPass + upperCase)
   }
   
-  var passLower= confirm ("Would you like lower case letters?");
+  var passLower = confirm ("Would you like lower case letters?");
   if (passLower) {
-    combinedPass+= lowerCase
+    (userPass = userPass + lowerCase)
   }
+
   var passNum = confirm ("Would you like numbers?");
   if (passNum) {
-    combinedPass+= numbers
+    (userpass = userPass + numbers)
   }
-  var passChar= confirm ("Would you like special characteres? (!@#$%)");
+
+  var passChar = confirm ("Would you like special characteres? (!@#$%)");
   if (passChar) {
-    combinedPass+= specialCharacters
+    (userPass = userPass + specialCharacters)
   }
+   
+  for (var i = 0 ; i < passLength; i++) {
+    var finalPass = finalPass + userPass[Math.floor (Math.random() * userPass.length)];
+  }
+}
+
+// return finalPass;
+}
 
 
-  
-}
-  
-}
 
 
 
