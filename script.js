@@ -1,20 +1,9 @@
-// TODO: Create Prompt
-// How many characters would you like (8-128)? 
-// TODO: Create Confirms
-// Would you like numbers? Special Characters? Captial letters?
-// TODO: Add if/else statements regarding for prompt 
-// restrict them from too few and too many characters 
-// add alert
-// TODO:Add if/else statements for confirms
-// TODO:Create variables
-// TODO:Create function and character sets depending on prompt/confirm answers
-// TODO:Followed by for loop and randomizing the content within the character sets
-// TODO:Return the value to function
 
 
 // Assignment Code
 
 var generateBtn = document.querySelector("#generate"); {
+// Created initial function of the button
 function generatePassword () {
 
   var userPass = []
@@ -22,7 +11,7 @@ function generatePassword () {
   var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
   var passNumbers = ["0123456789"];
   var specialCharacters = ["!@#$%^&*-()"];
-  var passWordOptions = []
+  var passwordOptions = []
   
   var passLength =0
   while (passLength < 8 || passLength > 128) {
@@ -35,23 +24,23 @@ function generatePassword () {
     
   var passUpper = confirm ("Would you like upper case letters?");
   if (passUpper) {
-    (passWordOptions += upperCase)
+    (passwordOptions += upperCase)
   }
   
   var passLower = confirm ("Would you like lower case letters?");
   if (passLower) {
-    (passWordOptions += lowerCase)
+    (passwordOptions += lowerCase)
   }
 
 
   var numbers = confirm ("Would you like numbers?");
   if (numbers) {
-    (passWordOptions += passNumbers)
+    (passwordOptions += passNumbers)
   }
   
   var passChar = confirm ("Would you like special characteres? (!@#$%)");
   if (passChar) {
-    (passWordOptions += specialCharacters)
+    (passwordOptions += specialCharacters)
     console.log (userPass)
   }
   function getRandom(array) {
@@ -60,7 +49,7 @@ function generatePassword () {
     return randomElement;
   }
   for (var i=0; i<passLength; i++){
-    var randomChar = getRandom(passWordOptions); 
+    var randomChar = getRandom(passwordOptions); 
     userPass.push(randomChar);
   }
   console.log(userPass.join(""))
@@ -70,12 +59,6 @@ function generatePassword () {
 
 
 }
-
-
-
-
-
-
 
   // Write password to the #password input
   function writePassword() {
