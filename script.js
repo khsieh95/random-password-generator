@@ -21,7 +21,7 @@ function generatePassword () {
   var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
   var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
   var passNumbers = ["0123456789"];
-  var specialCharacters = ["!@#$%^&*-"];
+  var specialCharacters = ["!@#$%^&*-()"];
   var passWordOptions = []
   
   var passLength =0
