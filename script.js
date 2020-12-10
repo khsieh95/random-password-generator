@@ -13,6 +13,7 @@ function generatePassword () {
   var specialCharacters = ["!@#$%^&*-()"];
   var passwordOptions = []
   
+  // Password length generator
   var passLength =0
   while (passLength < 8 || passLength > 128) {
     passLength = prompt ("How long would you like your password? (Between 8-128)");
@@ -21,7 +22,7 @@ function generatePassword () {
     }
   }
   
-    
+  // Confirms regarding users password character selection *4
   var passUpper = confirm ("Would you like upper case letters?");
   if (passUpper) {
     (passwordOptions += upperCase)
@@ -43,16 +44,21 @@ function generatePassword () {
     (passwordOptions += specialCharacters)
     console.log (userPass)
   }
+
+  // Function created to help select random Index/Element from entire chosen array
   function getRandom(array) {
     var randomIndex = Math.floor (Math.random()* array.length);
     var randomElement = array[randomIndex];
     return randomElement;
   }
+  // For loop used to run regarding the users input on password length
   for (var i=0; i<passLength; i++){
     var randomChar = getRandom(passwordOptions); 
     userPass.push(randomChar);
   }
+  // Return and provide randomly generated password
   console.log(userPass.join(""))
+  // .join() used to turn array into string 
   return userPass.join("");
   
 }
