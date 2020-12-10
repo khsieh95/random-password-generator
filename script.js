@@ -17,44 +17,58 @@
 var generateBtn = document.querySelector("#generate"); {
 function generatePassword () {
 
-  var userPass = [""]
-  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-  var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-  var numbers = ["0","1","2","3","4","5","6","7","8","9"]
-  var specialCharacters = ["!","@","#","$","%","^","&"]
+  var userPass = []
+  var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
+  var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+  var passNumbers = ["0123456789"];
+  var specialCharacters = ["!@#$%^&*-"];
+  var passWordOptions = []
   
   var passLength =0
   while (passLength < 8 || passLength > 128) {
     passLength = prompt ("How long would you like your password? (Between 8-128)");
+    if (passLength < 8 || passLength > 128){
+      alert ("Password must be between 8 and 128 characters")
+    }
   }
   
     
   var passUpper = confirm ("Would you like upper case letters?");
   if (passUpper) {
-    (userPass = userPass + upperCase)
+    (passWordOptions += upperCase)
   }
   
   var passLower = confirm ("Would you like lower case letters?");
   if (passLower) {
-    (userPass = userPass + lowerCase)
+    (passWordOptions += lowerCase)
   }
 
-  var passNum = confirm ("Would you like numbers?");
-  if (passNum) {
-    (userpass = userPass + numbers)
-  }
 
+  var numbers = confirm ("Would you like numbers?");
+  if (numbers) {
+    (passWordOptions += passNumbers)
+  }
+  
   var passChar = confirm ("Would you like special characteres? (!@#$%)");
   if (passChar) {
-    (userPass = userPass + specialCharacters)
+    (passWordOptions += specialCharacters)
+    console.log (userPass)
   }
-   
-  for (var i = 0 ; i < passLength; i++) {
-    var finalPass = finalPass + userPass[Math.floor (Math.random() * userPass.length)];
+  function getRandom(array) {
+    var randomIndex = Math.floor (Math.random()* array.length);
+    var randomElement = array[randomIndex];
+    return randomElement;
   }
+  for (var i=0; i<passLength; i++){
+    var randomChar = getRandom(passWordOptions); 
+    userPass.push(randomChar);
+  }
+  console.log(userPass.join(""))
+  return userPass.join("");
+  
 }
 
-// return finalPass;
+
 }
 
 
