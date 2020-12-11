@@ -7,11 +7,11 @@ var generateBtn = document.querySelector("#generate"); {
 function generatePassword () {
 
   var userPass = []
+  var passwordOptions = []
   var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
   var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
   var passNumbers = ["0123456789"];
   var specialCharacters = ["!@#$%^&*-()"];
-  var passwordOptions = []
   
   // Password length generator
   var passLength =0
