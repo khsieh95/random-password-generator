@@ -3,6 +3,9 @@
 
 Link to random-generated-password site: https://khsieh95.github.io/random-password-generator/
 
+<img width="1440" alt="Screen Shot 2020-12-10 at 4 45 59 PM" src="https://user-images.githubusercontent.com/74025123/101847306-cae8db00-3b07-11eb-84f2-3862dab70f7f.png">
+
+
 For this homework assignment, I did my best to layout the structure of the javascript in my head. Here's how it went. 
 
 1. I created the initial function that would generate the entire password. 
