@@ -1,5 +1,8 @@
 # random-password-generator
 
+
+Link to random-generated-password site: https://khsieh95.github.io/random-password-generator/
+
 For this homework assignment, I did my best to layout the structure of the javascript in my head. Here's how it went. 
 
 1. I created the initial function that would generate the entire password. 
@@ -15,3 +18,4 @@ For this homework assignment, I did my best to layout the structure of the javas
 8. Added for loop to address user input on the LENGTH of the password that they would like (8-128). 
     * Made new variable (randomChar) to reference the new function (mentioned in 7) to populate the userPassword randomly
 9. Final return to show the password on the site that has been generated
+
